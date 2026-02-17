@@ -1,11 +1,8 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useRef, useEffect } from "react";
 import Link from "next/link";
 import gsap from "gsap";
-
-const HeroWebGL = dynamic(() => import("./HeroWebGL"), { ssr: false });
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLElement>(null);
@@ -43,7 +40,6 @@ export default function HeroSection() {
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24"
       aria-label="Hero"
     >
-      <HeroWebGL />
       <div className="relative z-10 max-w-4xl text-center">
         <h1
           ref={headlineRef}
