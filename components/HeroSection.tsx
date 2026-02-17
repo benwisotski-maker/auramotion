@@ -47,14 +47,14 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-[85vh] flex-col items-center justify-center overflow-hidden bg-[#f2fbef] px-6 py-28"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[var(--background)] px-6 py-28"
       aria-label="Hero"
     >
       <div className="absolute inset-0 z-0">
         <DotGrid
           dotSize={5}
           gap={15}
-          baseColor="#f2fbef"
+          baseColor="#ffffff"
           activeColor="#37ff29"
           proximity={60}
           speedTrigger={100}
