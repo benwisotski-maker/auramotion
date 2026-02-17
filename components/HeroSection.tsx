@@ -1,8 +1,11 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useRef, useEffect } from "react";
 import Link from "next/link";
 import gsap from "gsap";
+
+const DotGrid = dynamic(() => import("./DotGrid"), { ssr: false });
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLElement>(null);
@@ -44,10 +47,27 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-[85vh] flex-col items-center justify-center bg-[var(--background)] px-6 py-28"
+      className="relative flex min-h-[85vh] flex-col items-center justify-center overflow-hidden bg-[#f2fbef] px-6 py-28"
       aria-label="Hero"
     >
-      <div className="mx-auto max-w-4xl text-center">
+      <div className="absolute inset-0 z-0">
+        <DotGrid
+          dotSize={5}
+          gap={15}
+          baseColor="#f2fbef"
+          activeColor="#37ff29"
+          proximity={60}
+          speedTrigger={100}
+          shockRadius={110}
+          shockStrength={5}
+          maxSpeed={5000}
+          resistance={750}
+          returnDuration={1.5}
+          className="h-full w-full"
+          style={{ width: "100%", height: "100%" }}
+        />
+      </div>
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
         <span
           ref={badgeRef}
           className="inline-block rounded-full border border-[var(--foreground)]/15 bg-[var(--muted-bg)] px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-[var(--foreground)]"
