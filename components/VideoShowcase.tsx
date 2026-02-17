@@ -46,25 +46,29 @@ function VideoCard({
   return (
     <article
       ref={cardRef}
-      className="group cursor-pointer rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 transition-colors hover:border-violet-500/50 hover:bg-zinc-900"
+      className="group cursor-pointer rounded-2xl bg-[var(--card-bg)] p-6 shadow-sm transition-shadow hover:shadow-md"
       onClick={onClick}
     >
-      <div className="aspect-video overflow-hidden rounded-xl bg-zinc-800">
+      <div className="aspect-video overflow-hidden rounded-xl bg-[var(--border)]">
         {item.thumbnail ? (
           <img
             src={item.thumbnail}
             alt=""
-            className="h-full w-full object-cover transition-transform group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform group-hover:scale-[1.02]"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center text-zinc-600">
+          <div className="flex h-full w-full items-center justify-center text-[var(--muted)]">
             <span className="text-4xl">▶</span>
           </div>
         )}
       </div>
-      <h3 className="mt-4 text-lg font-semibold text-white">{item.title}</h3>
+      <h3 className="mt-5 text-lg font-semibold text-[var(--foreground)]">
+        {item.title}
+      </h3>
       {item.shortDescription && (
-        <p className="mt-1 text-sm text-zinc-400">{item.shortDescription}</p>
+        <p className="mt-1.5 text-sm text-[var(--muted)]">
+          {item.shortDescription}
+        </p>
       )}
     </article>
   );
@@ -80,26 +84,26 @@ export default function VideoShowcase() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         headingRef.current,
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 24 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.7,
+          duration: 0.6,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 80%",
+            start: "top 82%",
             toggleActions: "play none none reverse",
           },
         }
       );
       gsap.fromTo(
         cardsRef.current?.children ?? [],
-        { opacity: 0, y: 40 },
+        { opacity: 0, y: 28 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
-          stagger: 0.15,
+          duration: 0.5,
+          stagger: 0.12,
           scrollTrigger: {
             trigger: cardsRef.current,
             start: "top 85%",
@@ -116,20 +120,20 @@ export default function VideoShowcase() {
       <section
         id="showcase"
         ref={sectionRef}
-        className="relative z-10 px-6 py-24 md:py-32"
+        className="bg-[var(--background)] px-6 py-24 md:py-32"
         aria-labelledby="showcase-heading"
       >
         <div className="mx-auto max-w-6xl">
           <h2
             id="showcase-heading"
             ref={headingRef}
-            className="text-center text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+            className="text-center text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl"
           >
             Ausgewählte Arbeiten
           </h2>
           <div
             ref={cardsRef}
-            className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+            className="mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
           >
             {placeholderVideos.map((item) => (
               <VideoCard
@@ -144,7 +148,7 @@ export default function VideoShowcase() {
 
       {modalVideo && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
           onClick={() => setModalVideo(null)}
           role="dialog"
           aria-modal="true"
@@ -152,7 +156,7 @@ export default function VideoShowcase() {
         >
           <button
             type="button"
-            className="absolute right-4 top-4 rounded-full bg-zinc-800 p-2 text-white hover:bg-zinc-700"
+            className="absolute right-6 top-6 rounded-full bg-white/90 p-2.5 text-[var(--foreground)] shadow-md transition-colors hover:bg-white"
             onClick={() => setModalVideo(null)}
             aria-label="Schliessen"
           >
@@ -165,7 +169,7 @@ export default function VideoShowcase() {
             <iframe
               title={modalVideo.title}
               src={`${modalVideo.videoUrl}${modalVideo.videoUrl.includes("?") ? "&" : "?"}autoplay=1`}
-              className="aspect-video w-full rounded-lg"
+              className="aspect-video w-full rounded-2xl shadow-2xl"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

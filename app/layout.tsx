@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import SiteBackground from "@/components/SiteBackground";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -103,10 +102,9 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body
-        className={`${dmSans.variable} ${geistMono.variable} font-sans antialiased text-[var(--foreground)]`}
+        className={`${dmSans.variable} ${geistMono.variable} font-sans antialiased bg-[var(--background)] text-[var(--foreground)]`}
       >
-        <SiteBackground />
-        <div className="relative z-10">{children}</div>
+        {children}
       </body>
     </html>
   );

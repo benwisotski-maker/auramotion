@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --muted: #71717a;
-  --accent: #a78bfa;
-  --accent-foreground: #0a0a0a;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --muted: #6b7280;
+  --muted-bg: #f5f5f7;
+  --card-bg: #f5f5f7;
+  --border: #e5e7eb;
+  --accent: #1a1a1a;
+  --accent-foreground: #ffffff;
 }
 
 @theme inline {
@@ -21,7 +24,6 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-/* Smooth scroll for anchor links */
 html {
   scroll-behavior: smooth;
 }
