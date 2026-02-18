@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import GradualBlur from "@/components/GradualBlur";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -18,33 +19,33 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://auramotion.ch";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Auramotion – Motion Grafiken & Explainvideos für SaaS & Tech | Schweiz",
-    template: "%s | Auramotion",
+    default: "AuraMotion – Premium Motion Design für SaaS | Zug & Zürich",
+    template: "%s | AuraMotion",
   },
   description:
-    "Motion Design aus der Schweiz: Professionelle Motion Grafiken und Explainvideos für SaaS- und Tech-Unternehmen. Produkte überzeugend inszenieren.",
+    "Where Swiss Precision Meets High-Growth SaaS. Handgefertigte Explainvideos und Motion Design aus dem Crypto Valley und Zürich. Keine Massenware, kein AI-Einheitsbrei.",
   keywords: [
     "Motion Design Schweiz",
     "Explainvideos SaaS",
-    "Tech Explainvideos",
+    "Crypto Valley Zug",
     "Motion Grafiken B2B",
-    "Erklärvideos Schweiz",
+    "Handgemachte Animation",
   ],
-  authors: [{ name: "Auramotion", url: siteUrl }],
-  creator: "Auramotion",
+  authors: [{ name: "AuraMotion", url: siteUrl }],
+  creator: "AuraMotion",
   openGraph: {
     type: "website",
     locale: "de_CH",
     url: siteUrl,
-    siteName: "Auramotion",
-    title: "Auramotion – Motion Grafiken & Explainvideos für SaaS & Tech | Schweiz",
+    siteName: "AuraMotion",
+    title: "AuraMotion – Premium Motion Design für SaaS | Zug & Zürich",
     description:
-      "Professionelle Motion Grafiken und Explainvideos für SaaS- und Tech-Unternehmen. Aus der Schweiz.",
+      "Swiss Digital Craftsmanship: Handgefertigte Motion Grafiken und Explainvideos für SaaS. Zug & Zürich.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Auramotion – Motion Grafiken & Explainvideos | Schweiz",
-    description: "Motion Design für SaaS & Tech. Explainvideos und Motion Grafiken aus der Schweiz.",
+    title: "AuraMotion – Premium Motion Design für SaaS | Zug & Zürich",
+    description: "Where Swiss Precision Meets High-Growth SaaS. Handgemacht in Zug & Zürich.",
   },
   robots: "index, follow",
 };
@@ -53,7 +54,7 @@ function JsonLd() {
   const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Auramotion",
+    name: "AuraMotion",
     url: siteUrl,
     description:
       "Motion Grafiken und Explainvideos für SaaS- und Tech-Unternehmen in der Schweiz.",
@@ -67,7 +68,7 @@ function JsonLd() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${siteUrl}/#organization`,
-    name: "Auramotion",
+    name: "AuraMotion",
     url: siteUrl,
     description:
       "Professionelle Motion Grafiken und Explainvideos für SaaS und Tech. Schweiz.",
@@ -105,6 +106,7 @@ export default function RootLayout({
         className={`${dmSans.variable} ${geistMono.variable} font-sans antialiased bg-[var(--background)] text-[var(--foreground)]`}
       >
         {children}
+        <GradualBlur target="page" position="bottom" height="4rem" strength={1.2} curve="ease-out" />
       </body>
     </html>
   );

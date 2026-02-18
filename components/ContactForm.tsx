@@ -80,7 +80,7 @@ export default function ContactForm() {
     <section
       id="contact"
       ref={sectionRef}
-      className="bg-[var(--background)] px-6 py-24 md:py-32"
+      className="bg-[var(--background)] px-8 py-28 md:px-12 md:py-36"
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto max-w-xl">
@@ -92,12 +92,12 @@ export default function ContactForm() {
           Kontakt
         </h2>
         <p className="mt-4 text-center text-[var(--muted)]">
-          Sie haben ein Projekt im Kopf? Schreiben Sie uns.
+          Sie haben ein Projekt im Kopf? Schreiben Sie uns – oder treffen Sie uns auf einen Kaffee in Zug oder Zürich.
         </p>
         <form
           ref={formRef}
           action={handleSubmit}
-          className="mt-12 flex flex-col gap-5"
+          className="mt-14 flex flex-col gap-6"
         >
           <div>
             <label
@@ -111,7 +111,7 @@ export default function ContactForm() {
               name="name"
               type="text"
               required
-              className="mt-1.5 w-full rounded-xl border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)] placeholder-[var(--muted)] focus:border-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]"
+              className="mt-1.5 w-full rounded-2xl border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)] placeholder-[var(--muted)] focus:border-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]"
               placeholder="Ihr Name"
             />
           </div>
@@ -127,7 +127,7 @@ export default function ContactForm() {
               name="email"
               type="email"
               required
-              className="mt-1.5 w-full rounded-xl border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)] placeholder-[var(--muted)] focus:border-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]"
+              className="mt-1.5 w-full rounded-2xl border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)] placeholder-[var(--muted)] focus:border-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]"
               placeholder="ihre@email.ch"
             />
           </div>
@@ -142,7 +142,7 @@ export default function ContactForm() {
               id="contact-company"
               name="company"
               type="text"
-              className="mt-1.5 w-full rounded-xl border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)] placeholder-[var(--muted)] focus:border-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]"
+              className="mt-1.5 w-full rounded-2xl border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)] placeholder-[var(--muted)] focus:border-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]"
               placeholder="Firmenname (optional)"
             />
           </div>
@@ -157,7 +157,7 @@ export default function ContactForm() {
               id="contact-phone"
               name="phone"
               type="tel"
-              className="mt-1.5 w-full rounded-xl border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)] placeholder-[var(--muted)] focus:border-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]"
+              className="mt-1.5 w-full rounded-2xl border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)] placeholder-[var(--muted)] focus:border-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]"
               placeholder="+41 … (optional)"
             />
           </div>
@@ -173,7 +173,7 @@ export default function ContactForm() {
               name="message"
               required
               rows={5}
-              className="mt-1.5 w-full resize-y rounded-xl border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)] placeholder-[var(--muted)] focus:border-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]"
+              className="mt-1.5 w-full resize-y rounded-2xl border border-[var(--border)] bg-white px-4 py-3 text-[var(--foreground)] placeholder-[var(--muted)] focus:border-[var(--foreground)] focus:outline-none focus:ring-1 focus:ring-[var(--foreground)]"
               placeholder="Ihr Anliegen …"
             />
           </div>
