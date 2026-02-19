@@ -41,7 +41,7 @@ export default function WhyUsSection() {
     <section
       id="warum-wir"
       ref={sectionRef}
-      className="bg-[var(--muted-bg)] px-8 py-28 md:px-12 md:py-36"
+      className="bg-[#212224] px-8 py-28 md:px-12 md:py-36"
       aria-labelledby="why-us-heading"
     >
       <div className="mx-auto max-w-4xl">
@@ -54,26 +54,26 @@ export default function WhyUsSection() {
         <h2
           id="why-us-heading"
           ref={headingRef}
-          className="mt-6 text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl"
+          className="mt-6 text-3xl font-bold tracking-tight text-white sm:text-4xl"
         >
           Warum wir?
         </h2>
-        <p className="mt-6 text-lg leading-relaxed text-[var(--muted)]">
+        <p className="mt-6 text-lg leading-relaxed text-gray-300">
           Der Markt – und was AuraMotion anders macht.
         </p>
-        <div ref={tableRef} className="mt-14 space-y-6">
+        <div ref={tableRef} className="mt-14 space-y-4">
           {comparisons.map((row, i) => (
             <div
               key={i}
-              className="grid gap-6 rounded-[28px] bg-white p-8 shadow-md sm:grid-cols-2 md:p-10"
+              className="grid gap-0 overflow-hidden rounded-xl sm:grid-cols-2"
             >
-              <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">Der Markt</p>
-                <p className="mt-1 text-[var(--foreground)]">{row.market}</p>
+              <div className="bg-[#2a2b2e] p-6 sm:p-8">
+                <p className="text-xs font-medium uppercase tracking-wider text-gray-400">Der Markt</p>
+                <p className="mt-1 text-gray-100">{row.market}</p>
               </div>
-              <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-[var(--muted)]">AuraMotion</p>
-                <p className="mt-1 font-medium text-[var(--foreground)]">{row.us}</p>
+              <div className="bg-[#2f3033] p-6 sm:p-8">
+                <p className="text-xs font-medium uppercase tracking-wider text-gray-400">AuraMotion</p>
+                <p className="mt-1 font-medium text-white">{row.us}</p>
               </div>
             </div>
           ))}
